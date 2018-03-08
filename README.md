@@ -1,24 +1,19 @@
-# README
+1. Rails.application.config.middleware.use Apartment::Elevators::Subdomain
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+is in config/initializers/apartment.rb
 
-Things you may want to cover:
+2. lvh.me:3000 without climbing over the GCFW.
+--------------------------------------------------
 
-* Ruby version
+How to create a new global model for all subdomains after apartment gem is installed already?
 
-* System dependencies
+1. rails g scaffold City name
+this is pretty normal
 
-* Configuration
+2. rails db:migrate
+will create all schemas for all domains anyways for cities
 
-* Database creation
+3. In apartment.rb, add "config.excluded_models = ["Advertiser", "Product", "City"]"
+then "City" will be a excluded model.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4. Now only Public Schemas will be populated no matter in which domain you have created a new record to city model.

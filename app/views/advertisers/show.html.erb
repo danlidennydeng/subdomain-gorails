@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @advertiser.email %>
+</p>
+
+<p>
+  <strong>Subdomain:</strong>
+  <%= @advertiser.subdomain %>
+</p>
+
+<%= link_to 'Edit', edit_advertiser_path(@advertiser) %> |
+<%= link_to 'Back', advertisers_path %>

@@ -1,0 +1,27 @@
+<%= form_for(advertiser) do |f| %>
+  <% if advertiser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(advertiser.errors.count, "error") %> prohibited this advertiser from being saved:</h2>
+
+      <ul>
+      <% advertiser.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subdomain %>
+    <%= f.text_field :subdomain %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
